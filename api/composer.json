@@ -1,0 +1,15 @@
+{
+    "require": {
+        "phpunit/phpunit": "^9.5",
+        "symfony/http-foundation": "^5.2",
+        "symfony/routing": "^5.2",
+        "symfony/http-kernel": "^5.2",
+        "ext-pdo": "*",
+        "ext-json": "*"
+    },
+    "autoload": {
+        "psr-4": { "": "src/" }
+    },
+    "name": "2itech/poo",
+    "description": "PHP Oriented Programming by 2iTech"
+}

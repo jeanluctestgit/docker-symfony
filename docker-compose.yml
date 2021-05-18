@@ -1,0 +1,16 @@
+version: "3.9"
+services:
+  db:
+    build: .docker/mysql
+
+  api:
+    build: .docker/php
+
+  apache:
+    build: .docker/apache
+
+  front:
+    build: .docker/front
+
+  nginx:
+    build: .docker/nginx
