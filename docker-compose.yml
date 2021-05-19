@@ -1,16 +1,23 @@
 version: "3.9"
 services:
-  db:
-    build: .docker/mysql
 
   api:
-    build: .docker/php
+    container_name: itech_api
+    build:
+      context: .
+      dockerfile: .docker/php/Dockerfile
+    volumes:
+      - ./api:/var/www/api
 
   apache:
-    build: .docker/apache
-
-  front:
-    build: .docker/front
-
-  nginx:
-    build: .docker/nginx
+    container_name: itech_apache
+    build:
+      context: .
+      dockerfile: .docker/apache/Dockerfile
+    volumes:
+      - ./api:/var/www/api
+      - .docker/apache/conf/site.conf:/etc/apache2/sites-enabled/site.conf
+    ports:
+      - 80:80
+    links:
+      - api

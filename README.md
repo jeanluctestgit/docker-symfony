@@ -14,13 +14,13 @@
 
 <VirtualHost *:80>
     ServerName m2i-poo
-    DocumentRoot "e:/projects/course/m2i-php-poo/web"
-    <Directory  "e:/projects/course/m2i-php-poo/web/">
-        DirectoryIndex front.php
+    DocumentRoot "/var/www/api/"
+    <Directory  "/var/www/api/">
+        DirectoryIndex index.php
         Require all granted
         RewriteEngine On
         RewriteCond %{REQUEST_FILENAME} !-f
-        RewriteRule . /front.php [L]
+        RewriteRule . /index.php [L]
     </Directory>
 </VirtualHost>
 
